@@ -169,7 +169,7 @@ B4 accepted Workspace `da5979c` and local image `4b7c12f0` after two browser sce
 
 The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) records accepted ordinary, horizontal, normalized and area journeys and the remaining UI-10 through UI-16 obligations. The [capability matrix](renderer-capability-matrix.md) records exact families and caller boundaries. These remain the detailed records behind this checklist.
 
-[Renderer roles](../README.md#renderer-roles) · [Perspective](perspective-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)
+[Renderer roles](delivery-history.md#renderer-roles) · [Perspective](perspective-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)
 
 ## Hierarchy port
 

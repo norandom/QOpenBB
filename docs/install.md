@@ -19,22 +19,11 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/manifest.json) for `alpha-43604526965-1`:
-
-| Service | Exact published reference |
-| --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:5e456b5f84383f49eb3e9cbda85ec20c9006e31d18619be715e4743c7cc8b570` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:fa113636cfb8a7df948053cfa39b8473e987ad68ab39ec54c0f079fa2909fac9` |
-
-Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [Company Research publication evidence](../artifacts/reviewed/company-research/publication-review.md).
-
-This alpha retains native locked uv, readable Python, embedded Valkey and the eleven endpoint-backed financial definitions, and adds the native Peer Research declaration and curated Company Research App. Existing company selection, periodic-query provenance and statement-period evidence remain available. The [local Company Research acceptance](../artifacts/reviewed/company-research/runtime-acceptance.md) checks source-matched observations, template portability and retained-data recreation on the identified local candidate. Published CI image identities are verified separately; their browser behavior has not been rerun. The owner confirmed the earlier alpha-42188370167-1 on Linux on 2026-11-06; that report does not transfer to this release. Independent server inspection and recovery remain unverified.
-
-The earlier [Python-source/Valkey acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md), [login repair](../artifacts/reviewed/login-password/application-review.md) and [historical chart gallery](../artifacts/reviewed/chart-gallery/publication-review.md) remain scoped historical evidence. Backup/restore and rollback remain unverified.
+For the earnings and Range chart build, both images carry the tag `alpha-46047645104-1`. For reproducible deployment, copy the two `images.*.reference` values from its manifest into `WORKSPACE_IMAGE` and `DATA_API_IMAGE` in your private `.env`. [Published manifest](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/manifest.json) · [Browser verification](../verification/earnings-calendar/README.md#published-alpha)
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-46047645104-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -91,7 +80,7 @@ A fresh account starts without a connected data backend or populated dashboard. 
 2. Select **Connect Backend**.
 3. Enter a connection name such as `QOpenBB data API`. Set **URL** to your current Workspace origin followed by `/data`, for example `http://127.0.0.1:23003/data`.
 4. Select **Test**, then **add** after the catalog test succeeds.
-5. Open **Apps** to see the connected backend's templates. The widget library also exposes its eleven native data definitions and the historical gallery widgets. Eligible FMP widgets support [selection by company name or symbol](company-selection.md).
+5. Open **Apps** to see the connected backend's templates. The widget library also exposes the connected financial datasets and historical gallery widgets. Eligible FMP widgets support [selection by company name or symbol](company-selection.md).
 
 Use the origin you actually opened in your browser. For a proxied deployment, append `/data` to that public origin rather than using the example's loopback address. The data API uses the provider keys already supplied through `.env`.
 

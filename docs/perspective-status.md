@@ -28,4 +28,4 @@ Perspective does not automatically restore every former enterprise-table feature
 
 The owned Workspace fork contains `terminalpro/src/components/Widgets/perspective/` and its `terminalpro/tests/perspective/` browser fixture, plus `terminalpro/tests/unit/perspective*.test.*` checks. The [source lock](../sources.lock.json) identifies the selected fork revision. See the [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) for outstanding advanced-table obligations.
 
-[Renderer roles](../README.md#renderer-roles) · [ECharts](echarts-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)
+[Renderer roles](delivery-history.md#renderer-roles) · [ECharts](echarts-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)

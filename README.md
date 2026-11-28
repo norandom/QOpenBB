@@ -1,317 +1,46 @@
 # QOpenBB
 
-A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
+QOpenBB is a self-hosted OpenBB workspace for financial research. Use it to compare a company's reported and estimated earnings, inspect filings and transcripts, or put company financials alongside FRED economic series. Docker Compose runs the browser workspace and the data API together. The data API uses your FMP and FRED keys to retrieve observations.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1) with public prebuilt `latest` images.** It adds the 25-task FMP Batch B increment: eight event and document inputs (dividend and split history, earnings, dividend and split calendars, company news, earnings-call transcripts and SEC filing metadata).
-- The local Events and Documents candidate lets an analyst inspect actual and estimated EPS and revenue alongside filings, transcripts and news. [Live chart and verification](artifacts/reviewed/events-and-documents/supplemental.md)
-- [Provider coverage](docs/provider-coverage.md#batch-b-events-and-documents-checkpoint-2026-11-18) separates the scoped live API checks for all eight from the five locally verified widget journeys.
-- [Publication verification](artifacts/reviewed/fmp-expansion-b/5.5-review.md) covers public assets and images, a network-isolated API check, and isolated internal-network readiness and login.
-- Windows host-loopback transport remains unverified. No CI-image financial browser run or new owner-server deployment is claimed.
-- The Commodities versus Technology research App passed packaged Ubuntu acceptance. It compares ETF price returns and risk with dated real-yield context, and reopens the original model runs after saving. The November 13 DBC/XLK spread was +11.28225 percentage points. [Packaged acceptance and image identities](artifacts/reviewed/research-stories/packaged-acceptance.md) · [Provider coverage](docs/provider-coverage.md#cross-asset-and-macro-inputs-checkpoint-2026-11-18)
-- FMP Batch A's eleven financial inputs and the [Company Research App](docs/company-research.md) retain their earlier acceptance.
+## Start with Docker Compose
 
-[![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
-[![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
+You need a Linux or WSL x86-64 host, Docker with the Compose plugin, and API keys for Financial Modeling Prep (FMP) and FRED. The two images are public. The commands below install the published development alpha in a new directory. [Release and verification](verification/earnings-calendar/README.md#published-alpha)
 
-[![Alpha channel](https://img.shields.io/badge/channel-alpha-orange)](docs/install.md) [![Development image tag](https://img.shields.io/badge/dev_images-latest-blue)](docs/install.md) [![Stable images](https://img.shields.io/badge/stable_images-planned-lightgrey)](docs/roadmap.md)
+1. Download the Compose file and environment template from the same release.
 
-[Install](docs/install.md) | [Documentation](docs/index.md) | [Roadmap](docs/roadmap.md) | [Delivery status](docs/prototype-delivery.md) | [Provider coverage](docs/provider-coverage.md) | [Breadth evidence](.kiro/breadth.toml)
+   ```bash
+   mkdir qopenbb && cd qopenbb
+   release=https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1
+   curl -fsSLo compose.yaml "$release/compose.yaml"
+   umask 077
+   curl -fsSLo .env "$release/default.env.sample"
+   mkdir -p data/workspace
+   ```
 
-![Twelve historical FMP charts in the QOpenBB gallery](artifacts/reviewed/chart-gallery/overview.png)
+2. Edit `.env`. Enter your `FMP_API_KEY` and `FRED_API_KEY`. For a local install, set `WORKSPACE_BIND_IP=127.0.0.1` and keep `PUBLIC_URL=http://127.0.0.1:23003`. Set both image references below to run the build verified for this guide. For a shared server, configure the browser-facing origin and access controls before starting. [Remote access](docs/tips-and-tricks.md)
 
-[Explore all 36 charts: analyst use cases, demo data, dimensions and interpretation](docs/chart-gallery.md)
+   ```dotenv
+   WORKSPACE_IMAGE=ghcr.io/norandom/qopenbb-workspace:alpha-46047645104-1
+   DATA_API_IMAGE=ghcr.io/norandom/qopenbb-data-api:alpha-46047645104-1
+   ```
 
-[What we can reuse from OpenBB, and the smallest next development steps](docs/capability-reuse.md)
+3. Start the services and check that `data-api` reports `healthy` and `workspace` is running.
 
-The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. Open the gallery through Apps in the published development alpha. Save/reopen and retained-state recreation passed on the identified local candidate; [publication is verified separately](artifacts/reviewed/chart-gallery/publication-review.md).
+   ```bash
+   docker compose config --quiet
+   docker compose pull
+   docker compose up -d --no-build
+   docker compose ps
+   ```
 
-Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-gallery-milestone.md):
+## Open your first dashboard
 
-- [x] Prepare fixed historical FMP data, 36 native chart configurations and API discovery.
-- [x] Verify the assembled gallery, save/reopen and retained-state recreation.
-- [x] Publish one overview and a [per-chart analyst guide](docs/chart-gallery.md) with reviewed screenshots.
-- [x] Publish the gallery in the prebuilt alpha images.
+Open <http://127.0.0.1:23003>. If you left the administrator settings blank, run `docker compose exec workspace credentials` in a private terminal to get your login.
 
-## Status at a glance
+1. Open **Connections → Connect Backend**. Give the connection a name and enter `http://127.0.0.1:23003/data`. For a remote install, append `/data` to the origin you opened in your browser.
+2. Select **Test**, then **add**. Each Workspace account makes this connection once.
+3. Open **Apps → QOpenBB starter**. Check that the AAPL annual income widget shows a fiscal period and a value, and that the FRED GDP widget shows a dated observation. These checks exercise both provider connections. If a widget stays empty, check the connection URL, provider keys and dataset access. [Installation and troubleshooting](docs/install.md#check-startup-problems)
 
-Native Windows developer workflow ([plan](.kiro/specs/native-development-workflow/tasks.md)):
+Keep `.env` and `data/workspace/` in the same deployment directory across updates. The latter holds account connections and saved dashboards. [Persistence and updates](docs/install.md#persistence-and-updates)
 
-- [x] Qualify pinned tools, Podman/Compose connectivity and the native command entry.
-- [x] Verify Windows user-only private-file protection and checked-handle access.
-- [x] Verify atomic session-file updates, interruption recovery and confined removal on Windows.
-- [x] Validate versioned runtime descriptors and checked private IPC for browser consumers.
-- [x] Run the existing isolated browser infrastructure on native Windows with pinned Chromium.
-- [x] Start the published image pair through native Podman Compose with verified bind state and login.
-- [x] Adapt image commands to explicit native Dagger/SDK/container executables.
-- [x] Connect root financial tests and the fork login fixture to checked private runtime data.
-- [x] Verify state-preserving Compose recreation and owned cleanup.
-- [x] Build, export, inspect and load the foundation image through pinned native Dagger and Podman.
-- [x] Join native commands and reviewed source pins; synthetic verification remains distinct from financial acceptance.
-- [x] Qualify both native-built application images and protected retained-state recreation. [Evidence](artifacts/reviewed/native-development-workflow/native-application-image.md).
-- [x] Correct Podman DNS routing and verify all eleven native widget definitions through the rebuilt Workspace image. [Acceptance](artifacts/reviewed/native-development-workflow/podman-dns-acceptance.md).
-- [x] Integrate protected sessions, Compose runtime, Dagger builds and Playwright; accept financial browser journeys and Linux compatibility.
-
-The native Windows migration is accepted: real financial journeys, retained-state recreation and Linux CI passed. [Acceptance and limits](artifacts/reviewed/native-development-workflow/native-migration-closeout.md).
-
-[Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.
-
-The current alpha uses locked native uv backend packaging, readable Python application source under CPython and embedded Valkey 9.0.7. [Local runtime acceptance](artifacts/reviewed/python-source-packaging/runtime-review.md) covers gallery save/fresh-login reopen and login/password changes; a separate synthetic Redis snapshot/RQ and database-marker probe covers recreation. [Publication verification](artifacts/reviewed/python-source-packaging/publication-review.md) checks the released image identities and public pulls, without repeating browser acceptance on CI image bytes.
-
-Deployment [login correction](.kiro/specs/openbb-self-service/login-password-policy.md):
-
-- [x] Authenticate existing passwords without applying new-password strength rules.
-- [x] Verify `.env` password replacement after Workspace recreation with retained account and data.
-- [x] Verify browser login, incorrect-password rejection and password changes on the corrected local image.
-- [x] Publish and verify the corrected prebuilt alpha images: [publication review](artifacts/reviewed/login-password/publication-review.md).
-
-- [x] Deliver the first prototype, including accepted chart milestones, login fixes, uv packaging and Valkey; owner confirmed server startup on 2026-10-28. [First-spec closure](.kiro/specs/openbb-self-service/prototype-closure.md).
-
-Snapshot: 2026-11-17. Follow the CI link for live run status; a green check does not establish deployment acceptance.
-
-| Area | What exists | What remains |
-| --- | --- | --- |
-| Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed; owner confirms deployed alpha is up | Generic required-symbol guard; broader host acceptance |
-| CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
-| Data | 22 native endpoint widget definitions, accepted initial FMP/FRED inputs and eleven added FMP API models; four added widgets verified locally; company discovery and 36-chart historical gallery retained | Seven added widget journeys, broader provider families, Yahoo adapter and complete per-widget analyst workflows |
-| Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
-| Analyst workflow | Existing dashboard editor; [Company name + Symbol selection](docs/company-selection.md), 10/10 bounded tasks accepted with real FMP data and retained-state reopening; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Curated quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
-| Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
-
-Company selector delivery:
-
-- [x] Verify linked company selection, actual FMP values, independent FRED/comparison widgets and retained-state reopening. [Acceptance](artifacts/reviewed/company-selector/20261106-acceptance-review.md).
-- [x] Publish and verify the company-selector milestone images and tagged alpha: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1).
-- [x] Receive owner confirmation of the Linux update, retained dashboards and working company autocomplete (2026-11-06); this is an owner report, not independent server inspection.
-
-Company Research input verification: 73 offline checks and five live journeys passed for Microsoft, Oracle and Adobe, with 46 native FMP requests and three direct DCF probes. The independently accepted [input assessment](.kiro/specs/analyst-workspace/research-input-assessment.md) closes IA-A as a gap assessment; IA-B analytical readiness remains open. Access does not resolve fiscal-period, currency, share-date or valuation-method compatibility; house calculations remain in the separate modeling layer.
-
-- [x] Review the next bounded [statement-period provenance contract](.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md).
-- [x] Approve the statement-period requirements and independently review its [design](.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
-- [x] Approve the design and independently review the [seven-task implementation plan](.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md).
-- [x] Approve the statement-period implementation tasks.
-- [x] Prepare isolated sources and the native provider baseline ([evidence](artifacts/reviewed/statement-period-provenance/baseline.md)).
-- [x] Accept the typed statement core contract ([evidence](artifacts/reviewed/statement-period-provenance/core.md)).
-- [x] Accept the statement consumer contract ([evidence](artifacts/reviewed/statement-period-provenance/consumer.md)).
-- [x] Accept FMP statement provenance source integration ([evidence](artifacts/reviewed/statement-period-provenance/provider.md)).
-- [x] Accept the installed statement/source join and 18-case real FMP matrix ([evidence](artifacts/reviewed/statement-period-provenance/join.md)).
-- [x] Repair optional native statement limits ([evidence](artifacts/reviewed/statement-period-provenance/native-defaults.md)).
-- [x] Accept the packaged Income/Balance/Cash browser journey ([evidence](artifacts/reviewed/statement-period-provenance/packaged.md)).
-- [x] Publish and accept all seven statement-period tasks: [alpha-42878062405-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) ([evidence](artifacts/reviewed/statement-period-provenance/publication.md)).
-
-- [x] Reconcile readiness and independently review [Company Research dashboard requirements](.kiro/specs/analyst-workspace/company-research-requirements.md).
-- [x] Approve requirements and independently review the [Company Research design](.kiro/specs/analyst-workspace/company-research-design.md).
-- [x] Approve the bounded design and independently review the [13-task implementation plan](.kiro/specs/analyst-workspace/company-research-tasks.md), including the [repaired owner amendment](.kiro/specs/analyst-workspace/company-research-tasks-amendment-rereview.md).
-- [x] Approve the Company Research tasks and accept the [foundation and shared contracts](artifacts/reviewed/company-research/verification.md).
-- [x] Accept the bounded [Company Research App](docs/company-research.md), including local FMP observations, template portability and retained-data recreation. [Runtime review](artifacts/reviewed/company-research/runtime-acceptance.md).
-- [x] Publish and verify the Company Research milestone images and release assets: [alpha-43604526965-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1) ([receipt](artifacts/reviewed/company-research/publication-review.md)).
-
-- [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
-- [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
-- [x] Approve the [periodic-query metadata repair design](.kiro/specs/market-data-integrations/periodic-query-provenance-design.md).
-- [x] Accept the periodic-query source/native repair: 125 focused tests, 73 integration checks and four real FMP cases passed.
-- [x] Publish and verify its image milestone: [alpha-42231784072-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) ([task plan](.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md), [evidence](artifacts/reviewed/periodic-query-provenance/accepted.md)); owner-server deployment remains unverified for this release.
-- [ ] Resolve the bounded IA-B prerequisites and deliver the quarterly/peer research dashboard.
-
-Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
-
-- [x] Accept Column & Line, Area & Column and Custom Combination, including distinct axes and editor controls.
-- [x] Verify captured FMP values, save/reopen/export and navigator/theme/refresh retention in the packaged image.
-- [x] Publish and verify the updated alpha images, including anonymous pulls of both services.
-
-See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
-
-Completed [Theme Settings preview milestone](.kiro/specs/analyst-workspace/theme-preview-milestone.md):
-
-- [x] Replace the preview renderer while preserving controls, keyboard and legend behavior.
-- [x] Make Padding work, including zero, with the existing saved format.
-- [x] Verify packaged save/reopen, retained-FMP palette/PNG and owner-approved light/dark appearance.
-- [x] Publish and verify the completed milestone images: [alpha-40506541604-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1). See the [publication review](artifacts/reviewed/theme-preview/publication-review.md).
-
-Completed [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
-
-- [x] Freeze reviewed mapping and financial contracts with a retained FMP income-allocation example.
-- [x] Complete and independently review the parallel data and rendering modules.
-- [x] Connect Sankey to the existing editor and saved-dashboard flow (source and packaged application accepted).
-- [x] Accept real-FMP behavior, save/reopen/export and owner-reviewed light/dark appearances.
-- [x] Publish and verify the completed Sankey milestone images: [alpha-40489065805-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1).
-
-The current prototype alpha includes four reviewed repairs: HTTP 200/null for an absent first-login questionnaire, packaging and serving for the existing data catalog, Workspace's fallback for unavailable external app previews, and an empty agent-discovery response for the data-only backend. AI remains a separate spec.
-
-- [x] Verify release assets and both published images through six anonymous pulls.
-- [x] Accept fresh onboarding and later login with clean diagnostics on the earlier prototype alpha Compose pair.
-- [x] Match the installed starter's annual AAPL income identity, reporting date, USD revenue and refresh to the live response.
-- [x] Complete the isolated pull-only local installation rehearsal.
-- [x] Receive owner confirmation of the current Linux deployment and the bounded company-selection checks above.
-- [ ] Repair and verify the generic-widget empty-required-symbol guard.
-
-See the [independent application review](artifacts/reviewed/prototype-onboarding/application-review.md), [application result](artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](docs/prototype-delivery.md#earlier-prototype-repair). Broader provider acceptance, analyst persistence and infrastructure recovery remain separate.
-
-Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
-
-- [x] Correct the reported bubble spacing and miniature overflow, then replace its FMP sample after verification.
-- [x] Publish the bubble-spacing and miniature-clipping correction.
-- [x] Match original label density and clip main markers; verify small/wide FMP views and save/reopen/export.
-- [x] Publish the label-refinement image milestone.
-- [x] Implement and review the inactive X/Y/size field-assignment contract.
-- [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
-- [x] Connect and source-review rendering, editor controls and saved XY settings.
-- [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions in the candidate image.
-- [x] Publish and verify the completed scatter/bubble milestone.
-
-Previous: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
-
-- [x] Review the binning contract and capture 40 quarterly FMP observations.
-- [x] Implement and independently verify the inactive binning module.
-- [x] Implement and independently verify inactive interval rendering.
-- [x] Connect and independently source-review the existing editor and application controls.
-- [x] Source-review automatic axis rounding and retained zoom/reset scales.
-- [x] Source-review endpoint-label overflow and original Bin count control order.
-- [x] Source-review miniature height, plot alignment and full-bin labels.
-- [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions.
-- [x] Publish and verify the completed histogram milestone.
-
-Published: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
-
-- [x] Review original field selection, concentric rings and saved alias.
-- [x] Implement and independently verify inactive pie/donut assignments.
-- [x] Implement and independently verify inactive rendering.
-- [x] Connect and source-review the existing editor and application flow.
-- [x] Repair title/legend editor transactions found by the first image run; source tests and independent review pass.
-- [x] Restore effective pie legend defaults and retain original title/legend appearance; source checks pass.
-- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles.
-- [x] Accept real-FMP behavior and the owner-reviewed appearance in the candidate image.
-- [x] Publish and verify the completed milestone.
-
-Published: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
-
-- [x] Review original statistics and freeze the numerical helper contract.
-- [x] Implement and independently verify original-matching numerical summaries.
-- [x] Implement and independently verify the inactive box/whisker renderer.
-- [x] Preserve original category identities in the inactive Box Plot capture helper.
-- [x] Independently accept inactive Box capture and original aggregate setup.
-- [x] Independently accept inactive Box axes/navigation and the existing-host adapter join.
-- [x] Connect and independently source-review the existing editor and saved-state flow.
-- [x] Pass retained-FMP and edge-case browser journeys against the packaged candidate.
-- [x] Source-review the Box fill, legend, category-label and miniature refinements; packaged-image comparison accepted.
-- [x] Source-review the real-sample collision and wheel-zoom layout repair; repaired candidate browser checks and owner visual acceptance pass.
-- [x] Accept original/replacement appearance and complete Box application verification.
-- [x] Publish and verify the completed milestone.
-
-Published: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
-
-- [x] Independently accept the inactive range-summary helper.
-- [x] Independently accept the inactive Range Bar renderer core.
-- [x] Independently accept the inactive Range Area renderer core.
-- [x] Independently accept Range capture/setup reuse while preserving Box behavior.
-- [x] Independently accept inactive Range series styling and saved-option precedence.
-- [x] Independently accept Range numeric value-axis planning and renderer handoff.
-- [x] Accept numeric/time category geometry in both inactive Range renderer cores.
-- [x] Preserve Range date/type provenance through Grid capture and statistical setup.
-- [x] Compose Range charts with calendar/numeric axes, saved styling and measured layout.
-- [x] Connect Range sessions, retained editor controls, navigation and pointer interactions, including original zoom defaults.
-- [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; the accepted image pair is published.
-- [x] Verify both Range families in the packaged application with real FMP data, save/reopen and export; publication is verified.
-
-Published: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), following the [23 October work plan](.kiro/specs/analyst-workspace/autonomous-2026-10-23.md).
-
-- [x] Review the signed-movement contract and original zero, missing-value and legend behavior.
-- [x] Implement and independently accept cumulative movements.
-- [x] Independently accept Waterfall appearance and control adapters.
-- [x] Independently accept the W2A renderer source: 30 tests, three independent probes and combined complexity pass.
-- [x] Independently accept the renderer/editor/session source join.
-- [x] Review the first packaged failure and verify empty-selection remove/re-add recovery.
-- [x] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image; owner accepts the appearance.
-- [x] Publish and verify the accepted milestone images.
-
-Waterfall remains available in the current alpha alongside Radar. Local application acceptance and public image identities are verified separately; see the [release evidence](artifacts/reviewed/chart-waterfall/verification.md#published-waterfall-alpha).
-
-## Delivery plan
-
-Accepted chart milestone: [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md).
-
-Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) is accepted for onboarded users and published; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
-
-- [x] Verify hierarchy FMP values, controls, approved appearance, persistence and export.
-- [x] Publish and verify the hierarchy milestone images: [alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1).
-- [x] Complete [Heatmap](.kiro/specs/analyst-workspace/heatmap-milestone.md): financial values, appearance, controls, persistence and export accepted.
-- [x] Publish and verify the Heatmap milestone images: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1).
-- [x] Accept [Funnel, Cone Funnel and Pyramid](.kiro/specs/analyst-workspace/funnel-milestone.md): owner-approved appearance, financial lifecycle, visible controls and plain-color Cone PNG contents pass within the [reviewed scope](artifacts/reviewed/chart-funnel/verification.md).
-- [x] Publish and verify the accepted Funnel milestone images: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1).
-- [x] Integrate Stacked Line and 100% Stacked Line renderer, editor and session; 231 affected checks pass.
-- [x] Verify three packaged Stacked Line financial/lifecycle journeys; both appearances accepted.
-- [x] Close Stacked Line axis/control checks, including repeated-date raw tooltips.
-- [x] Publish and verify the accepted Stacked Line milestone images: [alpha-40371082771-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40371082771-1).
-
-- [x] Freeze the Radial control contract and implement its inactive controls.
-- [x] Implement the independently reviewed Radial Column shape helper.
-- [x] Implement and independently review Radial numerical mapping and ECharts painting.
-- [x] Connect Radial charts to the existing application and session workflow.
-- [x] Correct Radial Column polar tick density and grid circles at source level.
-- [x] Implement and independently accept Bar grids, bounded circle fitting and shared Radial legend spacing at source level.
-- [x] Verify rebuilt Column and Bar appearance; owner approved both final appearances.
-- [x] Accept the identified packaged real-FMP journeys and original comparisons (RC4).
-- [x] Publish and verify the Radial release images (RC5): [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1).
-
-Nightingale delivery:
-
-- [x] Freeze original behavior and the retained FMP revenue-composition example (N0).
-- [x] Implement the inactive native renderer (N1).
-- [x] Implement the inactive existing-style controls (N2).
-- [x] Connect the Table/File application and persistence paths (N3).
-- [x] Accept real-data browser behavior and appearance (N4).
-- [x] Publish the accepted milestone once (N5): [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1).
-
-Published chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
-
-- [x] Freeze original Radar behavior and the retained-FMP example; independently reviewed inactive contracts and fixture.
-- [x] Independently accept the inactive Radar renderer.
-- [x] Independently accept inactive Radar editor/session adapters.
-- [x] Independently accept Radar capture and setup (RD3a).
-- [x] Independently accept source integration through the existing session, editor and caller routes (RD3/RD3b).
-- [x] Independently accept both packaged Radar behavioral journeys: retained FMP values, controls, refresh, fresh reopen and PNG export. [Evidence and samples](.kiro/specs/analyst-workspace/radar-milestone.md#fmp-samples).
-- [x] Accept the current Radar Line/Area appearance and disclosed original/replacement differences (RD4).
-- [x] Publish the accepted Radar milestone (RD5) as [alpha-40086673952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40086673952-1); [release assets and six anonymous pulls verified](artifacts/reviewed/chart-radar/verification.md#published-radar-alpha).
-
-![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
-
-The diagram shows delivery sequence and the Anthropic-before-Excel dependency, not completed work. Separate workstreams are not alpha release prerequisites. AI is independent of prototype acceptance. Custom sources have their own spec; Quant plugins remain a later extension. Existing persistence code, tests and the `./data/workspace` bind mount stay in place. Dashboard persistence acceptance belongs to the analyst spec; infrastructure recovery verification is deferred. Neither blocks this prototype.
-
-## One analytical experience across providers
-
-An analyst should be able to compare an equity, a commodity and a yield curve without learning each provider's API conventions. The planned workspace uses readable instrument names, familiar commands and linked dates, with consistent tables, charts and controls. Source labels stay visible.
-
-Consistency preserves financial meaning: a spot benchmark is different from a futures contract; a yield curve's horizontal axis is tenor, not time; a filing's publication date differs from its reporting period. The [provider map](docs/provider-coverage.md) separates published coverage from installed and verified functionality.
-
-The [Bloomberg-inspired visual reference](https://github.com/iconicvenom/bloomberg_free) guides the future theme and widget presentation. Existing OpenBB components and our chart work remain the foundation.
-
-## Renderer roles
-
-| Component | Role and current boundary |
-| --- | --- |
-| Apache ECharts | Implemented chart engine for selected table-to-chart journeys. Full family and caller compatibility remains open. [Done / todo](docs/echarts-status.md) |
-| FINOS Perspective | Installed runtime, React host and isolated verification foundation. Pivot/explorer widget integration remains work for `analyst-workspace`. [Done / todo](docs/perspective-status.md) |
-| Plotly | Existing endpoint-chart renderer retained. [Done / todo](docs/plotly-status.md) |
-| Highcharts | Removed dependency. Legacy Highcharts configurations are not universally translated into ECharts. |
-
-## Operate the prototype
-
-Development uses Windows/WSL Docker; deployment uses the same Compose topology on private Linux. The origin serves HTTP on `0.0.0.0:23003`; the owner manages Cloudflare Access and cloudflared for `qopenbb.example.com`. State uses relative bind directories, not Docker-managed data volumes.
-
-Dagger builds images only. Portable commands run verification and publication; GitHub Actions is the current runner, with Gitea portability retained. Development installation pulls the prebuilt `latest` alpha images; later stable releases use pinned versions. Installation uses these images and runs Compose without compiling source on the server. **The current release is the development alpha.** Use [delivery status](docs/prototype-delivery.md) for the remaining gates rather than treating the historical Compose proposal as an installation guide.
-
-Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public placeholders. Jupyter is managed separately.
-
-## Find the owning workstream
-
-| Workstream | Scope |
-| --- | --- |
-| [Prototype delivery](.kiro/specs/openbb-self-service/spec.json) | Current baseline, CI/CD, image publication and installation |
-| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 26/26 tasks accepted and published; shared contracts and ten FMP adapters accepted; FRED provenance, installed discovery and API safeguards accepted; eleven reusable widgets and live FMP/FRED inputs verified; packaged Income exploration and public image release verified; broader families remain follow-on work |
-| [Analyst workspace](.kiro/specs/analyst-workspace/requirements.md) | Reusable widgets, command line, linked context, theme, renderer completion and saved research context |
-| [Workspace AI](.kiro/specs/workspace-ai/requirements.md) | Anthropic discovery, grounding and streaming |
-| [OpenBB Excel](.kiro/specs/openbb-excel/requirements.md) | Add-in and generated functions; retains the Anthropic-first dependency |
-| [Custom data](.kiro/specs/custom-data-source/requirements.md) | Own datasets and later PostgreSQL |
-
-Successor specs are initialized scopes, not completed implementations. [Spec ownership](.kiro/spec-ownership.toml) records the handover. The [breadth map](.kiro/breadth.toml) retains actual tests and evidence; the [contribution guide](docs/contributing.md) explains working conventions.
-
-Sources are owned in the [Workspace fork](https://github.com/norandom/openbb-workspace) and [data API fork](https://github.com/norandom/openbb-data-api), with revisions in [sources.lock.json](sources.lock.json).
+[Documentation by concern](docs/index.md) · [Company research](docs/company-research.md) · [Chart gallery](docs/chart-gallery.md)

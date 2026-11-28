@@ -26,4 +26,4 @@ A Plotly-capable endpoint is not automatically a discoverable, parameterized das
 
 The owned Workspace fork retains `terminalpro/src/components/Widgets/Chart.tsx`, `terminalpro/src/components/Charting/PlotlyChart.tsx` and its chart callbacks. The [source lock](../sources.lock.json) identifies the selected revision. The [provider map](provider-coverage.md) separates published provider coverage from installed and verified functionality.
 
-[Renderer roles](../README.md#renderer-roles) · [ECharts](echarts-status.md) · [Perspective](perspective-status.md) · [Roadmap](roadmap.md)
+[Renderer roles](delivery-history.md#renderer-roles) · [ECharts](echarts-status.md) · [Perspective](perspective-status.md) · [Roadmap](roadmap.md)
