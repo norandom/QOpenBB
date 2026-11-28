@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Remove older published release records and their assets
+      - name: Remove older published releases, assets and tags
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -40,5 +40,5 @@ jobs:
           while IFS=$'\t' read -r id tag; do
             [[ -n "$id" ]] || continue
             echo "Removing release $tag ($id)"
-            gh api --method DELETE "$releases/$id"
+            gh release delete --repo "$GH_REPO" --yes --cleanup-tag -- "$tag"
           done <<< "$older"
